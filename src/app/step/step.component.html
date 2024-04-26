@@ -1,5 +1,5 @@
-<img [src]="step.image_path" alt="step.image">
-<p *ngIf="!editor" ><span [innerHtml]="step.text"></span><button mat-icon-button (click)="edit($event)"><mat-icon>edit</mat-icon></button></p>
+<img [src]="step.image_url" alt="step.image">
+<p *ngIf="!editor" ><span [innerHtml]="step.description"></span><button mat-icon-button (click)="edit($event)"><mat-icon>edit</mat-icon></button></p>
 <div class="NgxEditor__Wrapper" *ngIf="editor" (click)="$event.stopPropagation()">
     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
     <ngx-editor [editor]="editor" [(ngModel)]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { TutorialsTable } from '../client';
+import { GetSteps, Tutorials } from '../client';
 import { StepComponent } from '../step/step.component';
 import { CommonModule } from '@angular/common';
 import { NgxSortableModule } from 'ngx-sortable';
-import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-tutorial',
@@ -13,13 +13,16 @@ import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/d
   styleUrl: './tutorial.component.scss'
 })
 export class TutorialComponent {
-  steps: TutorialsTable[] = [
-    { image_path: "https://coflnet.com/static/sky-image.png", text: "Step 1" },
-    { image_path: "https://coflnet.com/static/sky-image.png", text: "Step 2" },
-  ] as TutorialsTable[];
+  tutorial: Tutorials = {
+    name: "Tutorial - name",
+    steps: [
+      { image_url: "https://coflnet.com/static/sky-image.png", description: "Step 1" },
+      { image_url: "https://coflnet.com/static/sky-image.png", description: "Step 2" },
+    ] as GetSteps[]
+  } as Tutorials;
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.steps, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.tutorial.steps, event.previousIndex, event.currentIndex);
   }
   stepChanged() {
     throw new Error('Method not implemented.');

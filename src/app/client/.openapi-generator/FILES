@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api.module.ts
 api/api.ts
@@ -8,9 +7,12 @@ configuration.ts
 encoder.ts
 git_push.sh
 index.ts
+model/getSteps.ts
 model/hTTPValidationError.ts
 model/models.ts
-model/tutorialsTable.ts
+model/postSteps.ts
+model/postTutorials.ts
+model/tutorials.ts
 model/validationError.ts
 model/validationErrorLocInner.ts
 param.ts

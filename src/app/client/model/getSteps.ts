@@ -11,11 +11,11 @@
  */
 
 
-export interface TutorialsTable { 
-    id?: number | null;
-    user_id: string;
-    challenge_id: string;
-    text?: string | null;
-    image_path?: string | null;
+export interface GetSteps { 
+    id: number;
+    position: number;
+    image_url: string;
+    description: string;
+    marker: object;
 }
 

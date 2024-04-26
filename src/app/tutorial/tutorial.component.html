@@ -1,7 +1,6 @@
-
+<h1>{{tutorial.name}}</h1>
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    @for (item of steps; track item) {
-      <app-step [step]="item" cdkDrag (changed)="stepChanged()"></app-step>
+    @for (item of tutorial.steps; track item) {
+    <app-step [step]="item" cdkDrag (changed)="stepChanged()"></app-step>
     }
-  </div>
-  
+</div>

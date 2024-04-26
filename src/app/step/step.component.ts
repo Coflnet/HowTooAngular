@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TutorialsTable } from '../client';
+import { GetSteps } from '../client';
 import { Editor, NgxEditorModule } from 'ngx-editor';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -15,23 +15,23 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class StepComponent {
   @Input()
-  step: TutorialsTable = null!;
+  step: GetSteps = null!;
   @Output()
-  stepChanged = new EventEmitter<TutorialsTable>();
+  stepChanged = new EventEmitter<GetSteps>();
   editor: Editor|undefined;
   html = '';
 
   edit(click:MouseEvent) {
     click.stopPropagation();
     this.editor = new Editor();
-    this.html = this.step.text || '';
+    this.html = this.step.description || '';
     this.editor.view.focus();
     
   }
 
   save() {
     if (this.editor) {
-      this.step.text =  this.html;
+      this.step.description =  this.html;
       this.stepChanged.emit(this.step);
       this.editor.destroy();
       this.editor = undefined;
