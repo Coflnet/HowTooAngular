@@ -1,5 +1,6 @@
 FROM registry.suse.com/bci/nodejs:20 as build
 WORKDIR /app/src
+
 COPY package*.json ./
 RUN npm ci
 COPY . ./
