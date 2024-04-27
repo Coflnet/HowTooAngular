@@ -5,7 +5,7 @@
         <span matListItemTitle (click)="navigate(tutorial)">{{tutorial.name}} </span>
     </mat-list-item>
     }
-    @if(tutorials.length > 0){
+    @if(tutorials.length == 0){
     <p>Noch keine Erklärungen </p>
     }
 </mat-list>
