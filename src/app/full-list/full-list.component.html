@@ -2,7 +2,7 @@
 <mat-list>
     @for (tutorial of tutorials; track $index) {
     <mat-list-item>
-        <span matListItemTitle (click)="navigate(tutorial)">{{tutorial.name}} </span>
+        <span matListItemTitle (click)="navigate(tutorial)">{{tutorial.name}} <button mat-button>Öffnen</button></span>
     </mat-list-item>
     }
     @if(tutorials.length == 0){

@@ -17,11 +17,8 @@ import { FormsModule } from '@angular/forms';
 export class TutorialComponent {
 
   tutorial: Tutorials = {
-    name: "Tutorial - name",
-    steps: [
-      { image_url: "https://coflnet.com/static/sky-image.png", description: "Step 1" },
-      { image_url: "https://coflnet.com/static/sky-image.png", description: "Step 2" },
-    ] as GetSteps[]
+    name: "",
+    steps: [] as GetSteps[]
   } as Tutorials;
 
   constructor(private activeRoute: ActivatedRoute, private tutorialService: TutorialsService) {

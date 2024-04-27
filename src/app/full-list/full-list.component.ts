@@ -3,11 +3,12 @@ import { Tutorials, TutorialsService } from '../client';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-full-list',
   standalone: true,
-  imports: [ CommonModule, MatListModule],
+  imports: [ CommonModule, MatListModule, MatButtonModule],
   templateUrl: './full-list.component.html',
   styleUrl: './full-list.component.scss'
 })

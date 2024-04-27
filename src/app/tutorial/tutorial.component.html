@@ -1,6 +1,6 @@
 <input (ngModelChange)="nameChanged($event)" [ngModel]="tutorial.name">
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
     @for (item of tutorial.steps; track item) {
-    <app-step [step]="item" cdkDrag (changed)="stepChanged()" (remove)="removeStep(item)"></app-step>
+    <app-step [step]="item" cdkDrag (stepChanged)="stepChanged()" (remove)="removeStep(item)"></app-step>
     }
 </div>

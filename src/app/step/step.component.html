@@ -1,16 +1,27 @@
 <div>
-    <div class="step-image">
-        <span *ngIf="hasCoordiantes" class="circle" [style.top]="y +'px'" [style.left]="x+'px'"></span>
-        <img [src]="step.image_url" alt="step.image">
+    <div class="step-image" (click)="imageClick($event)">
+        <span *ngIf="hasCoordiantes" class="circle" [style.top]="(y - 10) +'px'" [style.left]="(x - 10)+'px'"></span>
+        <img [src]="step.image_url" class="image-preview" alt="step.image" #container>
     </div>
     <mat-icon (click)="triggerRemove()" class="remove">delete</mat-icon>
 </div>
-<p *ngIf="!editor" ><span [innerHtml]="step.description"></span><button mat-icon-button (click)="edit($event)"><mat-icon>edit</mat-icon></button></p>
+<p *ngIf="!editor" class="description"><span [innerHtml]="step.description"></span><button mat-icon-button
+        (click)="edit($event)"><mat-icon>edit</mat-icon></button></p>
 <div class="NgxEditor__Wrapper" *ngIf="editor" (click)="$event.stopPropagation()">
     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
     <ngx-editor [editor]="editor" [(ngModel)]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
     <div>
         <button mat-icon-button (click)="save()"><mat-icon>save</mat-icon></button>
+    </div>
+</div>
 
+<div class="image-zoomed" *ngIf="zoomed" (click)="zoomed=false">
+    <span *ngIf="hasCoordiantes" class="close" [style.top]="'0px'"
+        [style.right]="'0px'"><mat-icon>close</mat-icon></span>
+    <div class="image-container">
+
+        <span *ngIf="hasCoordiantes" class="circle" [style.top]="(zoomedY - 10) +'px'"
+            [style.left]="(zoomedX - 10)+'px'"></span>
+        <img [src]="step.image_url" alt="step.image">
     </div>
 </div>
