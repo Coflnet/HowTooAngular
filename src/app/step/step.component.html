@@ -1,5 +1,8 @@
 <div>
-    <img [src]="step.image_url" alt="step.image">
+    <div class="step-image">
+        <span *ngIf="hasCoordiantes" class="circle" [style.top]="y +'px'" [style.left]="x+'px'"></span>
+        <img [src]="step.image_url" alt="step.image">
+    </div>
     <mat-icon (click)="triggerRemove()" class="remove">delete</mat-icon>
 </div>
 <p *ngIf="!editor" ><span [innerHtml]="step.description"></span><button mat-icon-button (click)="edit($event)"><mat-icon>edit</mat-icon></button></p>

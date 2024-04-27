@@ -22,6 +22,18 @@ export class StepComponent {
   remove = new EventEmitter<GetSteps>();
   editor: Editor | undefined;
   html = '';
+  hasCoordiantes = false;
+  x = 0;
+  y = 0;
+
+  ngAfterViewInit() {
+    this.hasCoordiantes = !!this.step.marker;
+    if (this.hasCoordiantes) {
+      // parse string to number
+      this.x = Number(this.step.marker!['x']);
+      this.y = Number(this.step.marker!['y']);
+    }
+  }
 
   edit(click: MouseEvent) {
     click.stopPropagation();
