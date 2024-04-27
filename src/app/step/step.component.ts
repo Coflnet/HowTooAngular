@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-step',
   standalone: true,
-  imports: [NgxEditorModule,FormsModule,CommonModule,MatIconModule,MatButtonModule],
+  imports: [NgxEditorModule, FormsModule, CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './step.component.html',
   styleUrl: './step.component.scss'
 })
@@ -18,24 +18,30 @@ export class StepComponent {
   step: GetSteps = null!;
   @Output()
   stepChanged = new EventEmitter<GetSteps>();
-  editor: Editor|undefined;
+  @Output()
+  remove = new EventEmitter<GetSteps>();
+  editor: Editor | undefined;
   html = '';
 
-  edit(click:MouseEvent) {
+  edit(click: MouseEvent) {
     click.stopPropagation();
     this.editor = new Editor();
     this.html = this.step.description || '';
     this.editor.view.focus();
-    
+
   }
 
   save() {
     if (this.editor) {
-      this.step.description =  this.html;
+      this.step.description = this.html;
       this.stepChanged.emit(this.step);
       this.editor.destroy();
       this.editor = undefined;
     }
+  }
+
+  triggerRemove() {
+    this.remove.emit(this.step);
   }
 
   ngOnDestroy(): void {

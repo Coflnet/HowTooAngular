@@ -16,6 +16,6 @@ export interface GetSteps {
     position: number;
     image_url: string;
     description: string;
-    marker: object;
+    marker: { [key: string]: string; };
 }
 

@@ -1,1 +1,12 @@
-<p>full-list works!</p>
+@if(tutorials != null){
+<mat-list>
+    @for (tutorial of tutorials; track $index) {
+    <mat-list-item>
+        <span matListItemTitle (click)="navigate(tutorial)">{{tutorial.name}} </span>
+    </mat-list-item>
+    }
+    @if(tutorials.length > 0){
+    <p>Noch keine Erklärungen </p>
+    }
+</mat-list>
+}

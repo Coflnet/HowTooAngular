@@ -15,6 +15,6 @@ export interface PostSteps {
     position: number;
     file_name: string;
     description: string;
-    marker: object;
+    marker: { [key: string]: string; };
 }
 

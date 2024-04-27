@@ -34,7 +34,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class TutorialsService {
 
     protected basePath = 'https://how-too.coflnet.com/api';
     public defaultHeaders = new HttpHeaders();

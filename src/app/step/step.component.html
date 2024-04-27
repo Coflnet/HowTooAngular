@@ -1,4 +1,7 @@
-<img [src]="step.image_url" alt="step.image">
+<div>
+    <img [src]="step.image_url" alt="step.image">
+    <mat-icon (click)="triggerRemove()" class="remove">delete</mat-icon>
+</div>
 <p *ngIf="!editor" ><span [innerHtml]="step.description"></span><button mat-icon-button (click)="edit($event)"><mat-icon>edit</mat-icon></button></p>
 <div class="NgxEditor__Wrapper" *ngIf="editor" (click)="$event.stopPropagation()">
     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
