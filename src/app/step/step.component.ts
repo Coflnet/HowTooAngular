@@ -30,8 +30,8 @@ export class StepComponent {
     this.hasCoordiantes = !!this.step.marker;
     if (this.hasCoordiantes) {
       // parse string to number
-      this.x = Number(this.step.marker!['x']);
-      this.y = Number(this.step.marker!['y']);
+      this.x = Number(this.step.marker!['x']) -10;
+      this.y = Number(this.step.marker!['y']) -10;
     }
   }
 
