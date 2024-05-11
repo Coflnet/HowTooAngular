@@ -1,11 +1,12 @@
-import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-esc',
   standalone: true,
-  imports: [CdkDropList, CdkDrag, CommonModule],
+  imports: [CdkDropList, CdkDrag, CdkDragHandle, CommonModule, MatIconModule],
   templateUrl: './esc.component.html',
   styleUrl: './esc.component.scss'
 })

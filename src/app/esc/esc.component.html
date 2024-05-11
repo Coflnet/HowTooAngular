@@ -1,6 +1,6 @@
 <h1>Esc Länder</h1>
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
     @for (item of countries; track item) {
-     <div class="example-box" cdkDrag>{{item}}</div>
+     <div class="example-box" cdkDrag>{{item}}<mat-icon cdkDragHandle>drag_handle</mat-icon></div>
     }
 </div>
